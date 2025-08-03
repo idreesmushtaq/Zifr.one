@@ -2,9 +2,9 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [master]
+    branches: [main, master]
   pull_request:
-    branches: [master]
+    branches: [main, master]
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
@@ -40,6 +40,8 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          NODE_ENV: production
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

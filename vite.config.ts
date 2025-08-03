@@ -106,7 +106,7 @@ export default defineConfig({
   },
   
   // Base configuration for deployment
-  base: './',
+  base: process.env.NODE_ENV === 'production' ? '/Zifr.one/' : './',
   
   // Public directory
   publicDir: 'public',
