@@ -106,7 +106,7 @@ export default defineConfig({
   },
   
   // Base configuration for deployment
-  base: '/',
+  base: './',
   
   // Public directory
   publicDir: 'public',
