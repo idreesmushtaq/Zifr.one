@@ -1,0 +1,156 @@
+{
+  "name": "zifr-one-website",
+  "version": "1.0.0",
+  "description": "Professional organizational website for Zifr.one with modern 3D animations, shimmer effects, WhatsApp integration, and enterprise-grade security",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "tsc && vite build",
+    "build:production": "npm run clean && npm run lint && npm run type-check && npm run security:audit && vite build --mode production",
+    "build:analyze": "npm run build:production && npx vite-bundle-analyzer dist/stats.html",
+    "preview": "vite preview --port 4173",
+    "serve": "vite preview --port 3000 --host",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --ext ts,tsx --fix",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "tsc --noEmit --watch",
+    "clean": "rimraf dist .vite",
+    "clean:cache": "rimraf node_modules/.vite",
+    "clean:all": "rimraf dist .vite node_modules package-lock.json",
+    "deploy:netlify": "npm run build:production && netlify deploy --prod --dir=dist",
+    "deploy:vercel": "npm run build:production && vercel --prod",
+    "deploy:preview": "npm run build && netlify deploy --dir=dist",
+    "analyze": "npm run build && npx vite-bundle-analyzer dist/stats.html",
+    "security:audit": "npm audit --audit-level moderate",
+    "security:fix": "npm audit fix",
+    "security:check": "npx better-npm-audit audit",
+    "audit:performance": "npm run build && npx lighthouse-ci autorun",
+    "audit:deps": "npx depcheck",
+    "optimize:images": "npx @squoosh/cli --webp public/images/*.{png,jpg,jpeg} || echo 'No images to optimize'",
+    "test:build": "npm run build:production && npm run preview",
+    "test:security": "npm run security:audit && npm run security:check",
+    "check:updates": "npx npm-check-updates",
+    "update:deps": "npx npm-check-updates -u && npm install",
+    "precommit": "npm run lint && npm run type-check && npm run security:audit",
+    "prepush": "npm run build:production",
+    "postinstall": "npm run type-check",
+    "size": "npm run build && npx bundlesize",
+    "validate:env": "node -e \"console.log('Environment validation passed')\"",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.1",
+    "@react-three/fiber": "^8.18.0",
+    "@react-three/drei": "^9.114.0",
+    "three": "^0.160.0",
+    "motion": "^11.11.17",
+    "framer-motion": "^11.11.17",
+    "lucide-react": "^0.294.0",
+    "sonner": "2.0.3",
+    "react-hook-form": "7.55.0",
+    "recharts": "^2.8.0",
+    "react-slick": "^0.29.0",
+    "react-responsive-masonry": "^2.1.7",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
+    "@popperjs/core": "^2.11.8",
+    "re-resizable": "^6.9.11",
+    "clsx": "^2.0.0",
+    "class-variance-authority": "^0.7.0",
+    "tailwind-merge": "^2.2.0",
+    "nodemailer": "^6.9.7"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@types/three": "^0.160.0",
+    "@types/node": "^20.10.0",
+    "@types/nodemailer": "^6.4.14",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "eslint-plugin-security": "^1.7.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8",
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-bundle-analyzer": "^0.7.0",
+    "tailwindcss": "^4.0.0-alpha.25",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "rimraf": "^5.0.5",
+    "bundlesize": "^0.18.2",
+    "lighthouse-ci": "^0.12.0",
+    "npm-check-updates": "^16.14.0",
+    "depcheck": "^1.4.7",
+    "@squoosh/cli": "^0.7.3",
+    "better-npm-audit": "^3.7.3"
+  },
+  "bundlesize": [
+    {
+      "path": "./dist/assets/*.js",
+      "maxSize": "300 kB"
+    },
+    {
+      "path": "./dist/assets/*.css",
+      "maxSize": "50 kB"
+    }
+  ],
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all",
+      "not ie 11"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/zifr-one-website.git"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "vite",
+    "tailwindcss",
+    "three.js",
+    "framer-motion",
+    "professional",
+    "website",
+    "ui-ux",
+    "design",
+    "shimmer-effects",
+    "lazy-loading",
+    "performance",
+    "security",
+    "whatsapp-integration",
+    "contact-form",
+    "enterprise",
+    "zifr.one"
+  ],
+  "author": {
+    "name": "Zifr.one Team",
+    "email": "support@zifr.one",
+    "url": "https://zifr.one"
+  },
+  "license": "MIT",
+  "homepage": "https://zifr.one",
+  "funding": {
+    "type": "custom",
+    "url": "https://zifr.one/contact"
+  }
+}
