@@ -38,7 +38,7 @@ export default defineConfig({
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'],
           three: ['three', '@react-three/fiber', '@react-three/drei'],
-          motion: ['motion', 'framer-motion'],
+          motion: ['framer-motion'],
           ui: ['lucide-react', 'sonner', 'clsx', 'tailwind-merge'],
         },
         chunkFileNames: 'assets/js/[name]-[hash].js',
@@ -93,7 +93,7 @@ export default defineConfig({
       'three',
       '@react-three/fiber',
       '@react-three/drei',
-      'motion',
+      'framer-motion',
       'lucide-react',
     ],
     exclude: ['@vite/client', '@vite/env'],

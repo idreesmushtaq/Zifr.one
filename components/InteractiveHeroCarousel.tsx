@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 import { ChevronLeft, ChevronRight, Play, Star, Quote, ArrowRight, Zap, Code, Palette } from 'lucide-react';

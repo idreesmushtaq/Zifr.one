@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { motion, useInView } from 'motion/react';
+import { motion, useInView } from 'framer-motion';
 import { LineChart, Line, AreaChart, Area, ResponsiveContainer, XAxis, YAxis, CartesianGrid, Tooltip, PieChart, Pie, Cell, RadialBarChart, RadialBar } from 'recharts';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { TrendingUp, Users, Code, Zap } from 'lucide-react';
